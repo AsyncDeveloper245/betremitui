@@ -1,0 +1,35 @@
+<!-- money code snippet -->
+<div id="money-code" class="betremit-modal-dialog__content-tabcontent">
+    <div class="section-content">
+        <div class="tab-content__section-header">
+            <h3>Money code</h3>
+            <p>Generate code for payments</p>
+        </div>
+
+        <div class="tab-content__form-container">
+            <form id="money-code__form" name="moneyCode" onsubmit="submitForm(event, 'money-code__loader')" onchange="validateForm(event)">
+                <div class="betremit-form__item">
+                    <select id="moneyCodeType" name="moneyCodeType">
+                        <option value="">Click here to select payment method</option>
+                        <option value="cash-withdrawal">Cash Withdrawal</option>
+                        <option value="pos-payment">POS Payment</option>
+                    </select>
+                </div>
+                <div class="betremit-form__item">
+                    <input type="number" name="amount" id="amount" placeholder="Amount">
+                </div>
+                <div class="betremit-form__item">
+                    <input type="password" name="pin" pattern="\d*" maxlength="4" id="pin" placeholder="Pin">
+                </div>
+                <div class="betremit-form__item">
+                    <input type="submit" value="generate code" name="submitButton">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="loading-dots" id="money-code__loader">
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+    </div>

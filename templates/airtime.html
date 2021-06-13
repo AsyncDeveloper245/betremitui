@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+<div class="tab-content__section-header">
+    <h3>Buy Airtime</h3>
+    <p>Enter the receipient's Phone Number</p>
+</div>
+<div class="tab-content__form-container">
+    <form id="bank-transfer__form" name="bankTransfer" onsubmit="submitForm(event, 'bank-transfer__loader')" onchange="validateForm(event)">
+        <div class="betremit-form__item">
+            <select id="banklist" name="bank">
+                <option value="">Click here to select your service provider</option>
+                <option value="214">MTN NG</option>
+                <option value="215">AIRTEL NG</option>
+                <option value="221">GLO NG</option>
+                <option value="221">9MOBILE NG</option>
+            </select>
+        </div>
+        <div class="betremit-form__item">
+            <input type="text" name="phonenumber" pattern="\d*" maxlength="11" id="receipient_account" placeholder="Receipient phone number(11 digits)">
+        </div>
+        <div class="betremit-form__item">
+            <input type="number" name="amount" id="transfer_amount" placeholder="Amount">
+        </div>
+        <div class="betremit-form__item">
+            <input type="submit" value="Send" name="submitButton">
+        </div>
+    </form>
+</div>
+{% endblock content%}

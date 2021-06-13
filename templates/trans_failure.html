@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<div class="betremit-modal-dialog__content-body">
+<div class="bank-transfer__error section-state">
+    <svg id="error-svg" width="70" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        <g transform="translate(4 4)" stroke="#D0021B" fill="none" fill-rule="evenodd">
+            <circle stroke-width="7" cx="58.5" cy="58.5" r="58.5" />
+            <path d="M58.037 54.6l15.168-18.91 1.308-1.631 3.246 2.624-1.308 1.631-15.398 19.198 18.206 17.582 1.502 1.45-2.891 3.019-1.502-1.45-17.94-17.327L42.82 80.243l-1.308 1.63-3.246-2.625 1.308-1.63 15.837-19.744-17.664-17.06-1.502-1.45 2.89-3.018 1.502 1.45 17.4 16.804z"
+                stroke-width="4.2" stroke-linecap="square" />
+        </g>
+    </svg>
+
+    <h2>Transaction failed</h2>
+    <p>An error occurred. Please try again</p>
+</div>
+</div>
+</div>
+
+{% endblock content%}

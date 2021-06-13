@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block content%}
+
+<div class="betremit-modal-dialog__content-body">       
+        
+    <div id="pay-online" class="betremit-modal-dialog__content-tabcontent">
+        <div class="section-content">
+            <div class="tab-content__section-header">
+                <h3>Pay online</h3>
+                <p>Copy card details for online payments</p>
+            </div>
+            <!-- <div class="customer-card">
+                <p class="customer-card__bg-text">card</p>
+                <div class="customer-card__content">
+                    <div class="customer-card__section customer-card__top">
+                        <div class="customer-card__logo">
+                            <img src="img/betremit-logo.png" alt="betremit-log">
+                        </div>
+                        <p class="customer-card__betremit-text">betremit</p>
+                    </div>
+                    <div class="customer-card__section customer-card__top">
+                        <div class="customer-card__section-title customer-card__cvv">
+                            <p>cvv</p>
+                            <input class="text-to-copy" id="js-card-cvv" onclick="copyText(event)" value="342">
+                        </div>
+                    </div>
+                    <div class="customer-card__section customer-card__bottom">
+                        <div class="customer-card__section-title customer-card__number">
+                            <p>card number</p>
+                            <input class="text-to-copy" id="js-card-number" onclick="copyText(event)" value="1234 5678 9012 6543">
+                        </div>
+                        <div class="customer-card__section-title customer-card__expires">
+                            <p>expires</p>
+                            <input class="text-to-copy" id="js-card-expires" onclick="copyText(event)" value="09/21">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="hint-container">
+                <p class="hint">Click on card details to copy</p>
+            </div>
+        </div>
+    </div>
+    <div id="ussd" class="betremit-modal-dialog__content-tabcontent">
+        <div class="tab-content__section-header">
+            <h3>USSD Payment</h3>
+            <p>Coming soon</p>
+        </div>
+    </div>
+</div>
+
+{%endblock content%}

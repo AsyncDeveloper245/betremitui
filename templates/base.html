@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Betremit payment modal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/modal.css' %}" />
+</head>
+
+<body>
+    <div class="betremit-modal-overlay">
+
+        <div class="loading-dots__initial" id="loading-dots__initial">
+            <div class="loading-dots--dot white"></div>
+            <div class="loading-dots--dot white"></div>
+            <div class="loading-dots--dot white"></div>
+        </div>
+        <div class="betremit-modal-dialog__container">
+            <div class="betremit-modal-dialog">
+                <div class="betremit-modal-dialog__form">
+                    <div class="betremit-modal-dialog__navigation">
+                        <div class="betremit-modal-dialog__navigation-container">
+                            <div class="betremit-modal-dialog__navigation-title">
+                                <h3>Actions</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'transfer' %}" onclick="openTab(event, 'bank-transfer')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M131.3 231.1L32 330.6l99.3 99.4v-74.6h174.5v-49.7H131.3v-74.6zM480 181.4L380.7 82v74.6H206.2v49.7h174.5v74.6l99.3-99.5z"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <span class="text">Bank transfer</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'airtime' %}" onclick="openTab(event, 'money-code')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M404 160H108c-33.1 0-60 26.9-60 60v168c0 33.1 26.9 60 60 60h296c33.1 0 60-26.9 60-60V220c0-33.1-26.9-60-60-60zM342.9 65L108 110.9c-18 4-44 22.1-44 44.1 0 0 15-19 49-19h287v-20.5c0-12.6-5-28.7-13.9-37.6-11.3-11.3-27.5-16.2-43.2-12.9z"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <span class="text">Airtime</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'data' %}" onclick="openTab(event, 'pay-online')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M480 128c0-17.6-14.4-32-32-32H64c-17.6 0-32 14.4-32 32v48h448v-48zM32 384c0 17.6 14.4 32 32 32h384c17.6 0 32-14.4 32-32V224H32v160zm142-48h164c7.7 0 14 6.3 14 14s-6.3 14-14 14H174c-7.7 0-14-6.3-14-14s6.3-14 14-14zm-72 0h12c7.7 0 14 6.3 14 14s-6.3 14-14 14h-12c-7.7 0-14-6.3-14-14s6.3-14 14-14z"
+                                                />
+                                            </svg>
+
+                                        </span>
+                                        <span class="text">Data</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'internet_sub' %}" onclick="openTab(event, 'pay-online')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M480 128c0-17.6-14.4-32-32-32H64c-17.6 0-32 14.4-32 32v48h448v-48zM32 384c0 17.6 14.4 32 32 32h384c17.6 0 32-14.4 32-32V224H32v160zm142-48h164c7.7 0 14 6.3 14 14s-6.3 14-14 14H174c-7.7 0-14-6.3-14-14s6.3-14 14-14zm-72 0h12c7.7 0 14 6.3 14 14s-6.3 14-14 14h-12c-7.7 0-14-6.3-14-14s6.3-14 14-14z"
+                                                />
+                                            </svg>
+
+                                        </span>
+                                        <span class="text">Cable Subscription</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'electricity' %}" onclick="openTab(event, 'pay-online')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M480 128c0-17.6-14.4-32-32-32H64c-17.6 0-32 14.4-32 32v48h448v-48zM32 384c0 17.6 14.4 32 32 32h384c17.6 0 32-14.4 32-32V224H32v160zm142-48h164c7.7 0 14 6.3 14 14s-6.3 14-14 14H174c-7.7 0-14-6.3-14-14s6.3-14 14-14zm-72 0h12c7.7 0 14 6.3 14 14s-6.3 14-14 14h-12c-7.7 0-14-6.3-14-14s6.3-14 14-14z"
+                                                />
+                                            </svg>
+
+                                        </span>
+                                        <span class="text">Electricity Bills</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="{% url 'online_payment' %}" onclick="openTab(event, 'pay-online')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M480 128c0-17.6-14.4-32-32-32H64c-17.6 0-32 14.4-32 32v48h448v-48zM32 384c0 17.6 14.4 32 32 32h384c17.6 0 32-14.4 32-32V224H32v160zm142-48h164c7.7 0 14 6.3 14 14s-6.3 14-14 14H174c-7.7 0-14-6.3-14-14s6.3-14 14-14zm-72 0h12c7.7 0 14 6.3 14 14s-6.3 14-14 14h-12c-7.7 0-14-6.3-14-14s6.3-14 14-14z"
+                                                />
+                                            </svg>
+
+                                        </span>
+                                       
+                                        <span class="text">Pay online</span>
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                    <a class="betremit-modal-dialog__navigation-item" href="" onclick="openTab(event, 'ussd')">
+                                        <span class="icon">
+                                            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M358.856 32H153.143C130.512 32 112 50.326 112 72.728v366.545C112 461.674 130.512 480 153.143 480h205.713C381.488 480 400 461.674 400 439.272V72.728C400 50.326 381.488 32 358.856 32zM364 400H148V112h216v288z"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <span class="text">USSD</span>
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="betremit-modal-dialog__content">
+                        <div class="betremit-modal-dialog__content-container">
+
+                            <button class="betremit-modal-close" onclick="closeModal()">
+                                <span class="sr-only">close</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z"
+                                    />
+                                </svg>
+                            </button>
+
+                            
+                            <div class="betremit-modal-dialog__content-header">
+                                <div class="betremit-logo__container">
+                                    <img src="{%static 'images/betremit-logo.png' %}">
+                                </div>
+                                <div class="customer-details__container">
+                                    <p class="customer-details__name">Yusuf Alara</p>
+                                    <p class="customer-details__credit">
+                                        <span>Credit:</span>
+                                        <span>NGN 50,000</span>
+                                    </p>
+                                </div>
+                            </div>
+                            {% block content%}{%endblock content%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="{%static 'js/vivus.min.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="betremit-modal-dialog__content-body">
+<div id="bank-transfer" class="betremit-modal-dialog__content-tabcontent">
+    <div class="section-content">
+        <div class="tab-content__section-header">
+            <h3>Bank transfer</h3>
+            <p>Enter the receipient's bank details</p>
+        </div>
+        
+        <div class="tab-content__form-container">
+            <form id="bank-transfer__form" name="bankTransfer" onsubmit="submitForm(event, 'bank-transfer__loader')" onchange="validateForm(event)">
+                <div class="betremit-form__item">
+                    <select id="banklist" name="bank">
+                        <option value="">Click here to select your bank</option>
+                        <option value="214">First City Monument Bank</option>
+                        <option value="215">Unity Bank</option>
+                        <option value="221">Stanbic IBTC Bank</option>
+                        <option value="232">Sterling Bank</option>
+                        <option value="301">Jaiz Bank</option>
+                        <option value="304">Stanbic Mobile</option>
+                        <option value="305">PAYCOM</option>
+                        <option value="307">Ecobank Mobile</option>
+                        <option value="309">FBN Mobile</option>
+                        <option value="311">Parkway</option>
+                        <option value="315">GTBank Mobile Money</option>
+                        <option value="322">Zenith Mobile</option>
+                        <option value="323">Access Mobile</option>
+                        <option value="401">Aso Savings and Loans</option>
+                        <option value="044">Access Bank Nigeria</option>
+                        <option value="014">Afribank Nigeria</option>
+                        <option value="063">Diamond Bank</option>
+                        <option value="050">Ecobank Nigeria</option>
+                        <option value="084">Enterprise Bank</option>
+                        <option value="070">Fidelity Bank</option>
+                        <option value="011">First Bank</option>
+                        <option value="058">GTBANK PLC</option>
+                        <option value="030">Heritage Bank</option>
+                        <option value="082">Keystone Bank</option>
+                        <option value="076">Skye Bank</option>
+                        <option value="068">Standard Chartered Bank Nigeria</option>
+                        <option value="032">Union Bank Of Nigeria</option>
+                        <option value="033">United Bank For Africa</option>
+                        <option value="035">Wema Bank</option>
+                        <option value="057">Zenith Bank</option>
+                        <option value="090114">Empire Trust Microfinance Bank</option>
+                    </select>
+                </div>
+                <div class="betremit-form__item">
+                    <input type="text" name="account" pattern="\d*" maxlength="10" id="receipient_account" placeholder="Receipient account number(10 digits)">
+                </div>
+                <div class="betremit-form__item">
+                    <input type="number" name="amount" id="transfer_amount" placeholder="Amount">
+                </div>
+                <div class="betremit-form__item">
+                    <input type="submit" value="send" name="submitButton">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="loading-dots" id="bank-transfer__loader">
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
+
+
