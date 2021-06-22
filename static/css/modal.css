@@ -399,21 +399,14 @@ form {
   color: rgba(69, 78, 101, 1);
   font-size: 14px;
 }
-.section-content {
-  padding: 2rem;
-}
+
 #money-code__code {
   font-size: 18px;
   color: #111f3d;
   margin-top: 8px;
   font-weight: bold;
 }
-.modal {
-  margin-top: 10rem;
-}
-.tab-content__form-container {
-  padding-bottom: 2em;
-}
+
 @-webkit-keyframes fadeEffect {
   from {
     opacity: 0;

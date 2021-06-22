@@ -1,69 +1,20 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+
 {% block content%}
 <div class="tab-content__section-header">
     <h3>Buy Airtime</h3>
     <p>Enter the receipient's Phone Number</p>
 </div>
 <div class="tab-content__form-container">
-    
-    <!-- <form id="bank-transfer__form" method="post">
+    <form id="bank-transfer__form" method="post" name="bankTransfer">
         {% csrf_token %}
          <div class="betremit-form__item">
-            <select id="banklist" value="{{service}}" name="service_type" >
-                <option value="">Click here to select your service provider</option>
-                
-                {%for service in services%}
-                <option >{{service}} NG</option>
-                {% endfor%}
-            </select>
-        </div>
-        <div class="betremit-form__item">
-            <input type="text" name="phone" pattern="\d*" maxlength="11" id="receipient_account" placeholder="Receipient phone number(11 digits)">
-        </div>
-        <div class="betremit-form__item">
-            <input type="number" name="amount" id="transfer_amount" placeholder="Amount">
-        </div>
-        <div class="betremit-form__item">
-            <input type="hidden" name="agentId" id="transfer_amount" value="{{agentId}}">
-        </div>
-        <div class="betremit-form__item">
-            <input type="hidden" name="plan" id="transfer_amount" value="prepaid">
-        </div>
-        <div class="betremit-form__item">
-            <input type="hidden" name="agentReference" id="transfer_amount" value="{{agentReference}}">
-        </div>
-        <div class="betremit-form__item">
-            <input type="submit" value="Send">
-             <button style="width: 100%; color: green;" type="submit">Send</button>
         </div> 
 
         {{form|crispy}}
         <button type="submit" class="btn btn-primary"> Send</button>
-    </form> -->
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-row">
-          <div class="form-group col-md-6 mb-0">
-            {{ form.plan|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-6 mb-0">
-            {{ form.service_type|as_crispy_field }}
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6 mb-0">
-            {{ form.phone|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-4 mb-0">
-            {{ form.amount|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-2 mb-0">
-            {{ form.agentReference|as_crispy_field }}
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
+    </form>
 </div>
 {% endblock content%}

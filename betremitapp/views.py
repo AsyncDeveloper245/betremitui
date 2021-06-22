@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 from baxi_api.betremit import Betremit
@@ -54,28 +55,31 @@ def AirtimeView(request):
         return render(request,'airtime.html',{"services":services,'agentReference':agentReference,"agentId":agentId,'form':form})
 
     if request.method == 'POST':
-        plan = request.POST['plan']
-        service = request.POST['service_type']
-        amount = request.POST['amount']
-        phone = request.POST['phone']
-        payload = {
-            'agentReference':agentReference,
-            'agentId':207,
-            'plan':plan,
-            "amount":int(amount),
-            "phone":phone,
-            "service_type":service,
-        }
-        print(payload)
-        response = betremit.Airtime.request_airtime(payload)
-        print(response)
+        form = AirtimePurchaseForm(request.POST)
+        if form.is_valid():
+            #plan = form.cleaned_data['plan']
+            service_type = form.cleaned_data['service_type']
+            amount = form.cleaned_data['amount']
+            phone = form.cleaned_data['phone']
+            payload = {
+                'agentReference':agentReference,
+                'agentId':207,
+                'plan':'prepaid',
+                "amount":int(amount),
+                "phone":phone,
+                "service_type":service_type,
+            }
+            response = betremit.Airtime.request_airtime(payload)
 
-        if not response == None:
-            return render(request,'trans_success.html')
+            if  response['data']['status'] == 'success':
+                res = response['data']['data']['transactionMessage']
+                return render(request,'trans_success.html',{'amount':amount,'phone':phone,'agentref':agentReference,'res':res})
+
+            else:
+                return redirect('error_page')
 
         else:
-            return render(request,'trans_failure.html')
-
+                return HttpResponse('Form is not valid')
 
 
     
