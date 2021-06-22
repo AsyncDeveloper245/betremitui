@@ -59,6 +59,9 @@ input[type="submit"]:disabled {
 .sr-only {
   visibility: hidden;
 }
+form {
+  padding: -2px;
+}
 .betremit-modal-overlay {
   position: absolute;
   top: 0;
@@ -179,7 +182,7 @@ input[type="submit"]:disabled {
   position: relative;
 }
 .betremit-modal-dialog__content-container {
-  padding: 24px;
+  padding: 20px;
 }
 .betremit-modal-dialog__content-header {
   display: flex;
@@ -210,7 +213,7 @@ input[type="submit"]:disabled {
   transition: all 0.3s;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #fff url("/img/md-arrow-dropdown.svg") no-repeat;
+  background: #fff url("/imgages/md-arrow-dropdown.svg") no-repeat;
   background-position: 97% 50%;
   display: block;
   width: 100%;
@@ -396,11 +399,20 @@ input[type="submit"]:disabled {
   color: rgba(69, 78, 101, 1);
   font-size: 14px;
 }
+.section-content {
+  padding: 2rem;
+}
 #money-code__code {
   font-size: 18px;
   color: #111f3d;
   margin-top: 8px;
   font-weight: bold;
+}
+.modal {
+  margin-top: 10rem;
+}
+.tab-content__form-container {
+  padding-bottom: 2em;
 }
 @-webkit-keyframes fadeEffect {
   from {

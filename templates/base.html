@@ -12,15 +12,14 @@
 
 <body>
     <div class="betremit-modal-overlay">
-
         <div class="loading-dots__initial" id="loading-dots__initial">
             <div class="loading-dots--dot white"></div>
             <div class="loading-dots--dot white"></div>
             <div class="loading-dots--dot white"></div>
         </div>
-        <div class="betremit-modal-dialog__container">
-            <div class="betremit-modal-dialog">
-                <div class="betremit-modal-dialog__form">
+        <div >
+            <div class="betremit-modal-dialog modal">
+                <div class="betremit-modal-dialog__form" style="margin-top: 12rem;">
                     <div class="betremit-modal-dialog__navigation">
                         <div class="betremit-modal-dialog__navigation-container">
                             <div class="betremit-modal-dialog__navigation-title">
@@ -136,7 +135,14 @@
                                     </p>
                                 </div>
                             </div>
-                            {% block content%}{%endblock content%}
+                            <div >
+                                <div class="betremit-modal-dialog__container " style="margin-bottom: 1em;">
+                                    {% block content%}
+                                    {%endblock content%}
+                            </div>
+                            </div>
+                           
+                            
                         </div>
                     </div>
                 </div>

@@ -7,8 +7,8 @@
     <h3>Buy Data Bundle</h3>
     <p>Enter the receipient's Phone Number</p>
 </div>
-<div class="tab-content__form-container">
-    <form id="bank-transfer__form" name="bankTransfer" onsubmit="submitForm(event, 'bank-transfer__loader')" onchange="validateForm(event)">
+<div class="tab-content__form-container" style="margin-bottom: 1em;">
+    <form id="bank-transfer__form" style="padding: -1px;" name="bankTransfer" onsubmit="submitForm(event, 'bank-transfer__loader')" onchange="validateForm(event)">
         <div class="betremit-form__item">
             <select id="banklist" name="bank">
                 <option value="">Click here to select your Service provider</option>
@@ -33,7 +33,7 @@
         <div class="betremit-form__item">
             <input type="number" name="amount" id="transfer_amount" placeholder="Amount">
         </div>
-        <div class="betremit-form__item">
+        <div class="betremit-form__item" >
             <input type="submit" value="Send" name="submitButton">
         </div>
     </form>
