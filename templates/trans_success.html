@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="betremit-modal-dialog__content-body">
-<div class="bank-transfer__success section-state">
-    <svg id="success-svg" width="70" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-        <g stroke="#29B263" stroke-width="7" fill="none" fill-rule="evenodd">
-            <path class="animate-svg" d="M91.989 11.976C79.86 4.892 65.158 2.128 50.337 5.278 18.735 11.996-1.439 43.06 5.278 74.663c6.718 31.602 37.782 51.776 69.385 45.059 31.602-6.718 51.776-37.782 45.059-69.385"
-            />
-            <path class="animate-svg" d="M29.407 65.574L55.987 88l67.474-74.262" />
-        </g>
-    </svg>
-    <h2>Transaction successful</h2>
-    <p>Your transfer of NGN 5000 was successful.</p>
+
+<div class="tab-content__section-header">
+    <h3>Transaction Status</h3>
 </div>
+<div class="tab-content__form-container">
+            <svg id="success-svg" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                <g stroke="#29B263" stroke-width="7" fill="none" fill-rule="evenodd">
+                    <path class="animate-svg" d="M91.989 11.976C79.86 4.892 65.158 2.128 50.337 5.278 18.735 11.996-1.439 43.06 5.278 74.663c6.718 31.602 37.782 51.776 69.385 45.059 31.602-6.718 51.776-37.782 45.059-69.385"
+                    />
+                    <path class="animate-svg" d="M29.407 65.574L55.987 88l67.474-74.262" />
+                </g>
+            </svg>
+            {{res}}
 </div>
 
-{% endblock content%}
+{% endblock content %}
