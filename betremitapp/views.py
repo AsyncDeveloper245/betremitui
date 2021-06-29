@@ -70,7 +70,6 @@ def AirtimeView(request):
                 "service_type":service_type,
             }
             response = betremit.Airtime.request_airtime(payload)
-
             if  response['data']['status'] == 'success':
                 res = response['data']['data']['transactionMessage']
                 return render(request,'trans_success.html',{'amount':amount,'phone':phone,'agentref':agentReference,'res':res})
